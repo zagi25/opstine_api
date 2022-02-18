@@ -1,8 +1,16 @@
+#!/usr/bin/env python3
 import json
+import socket
+import os
+import uvicorn
 from typing import Optional
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from response import Response
+
+
+HOST = socket.gethostbyname(socket.gethostname())
+PORT = int(os.environ.get("PORT", 5000))
 
 app = FastAPI()
 
@@ -109,3 +117,6 @@ async def get_podaci():
 
     return res.getResponse()
 
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host = HOST, port = PORT)
