@@ -3,4 +3,4 @@ pandas
 numpy
 cyrtranslit
 sqlite3
-
+uvicorn
