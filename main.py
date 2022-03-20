@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import json
 import socket
 import os
 import uvicorn
@@ -119,4 +118,4 @@ async def get_podaci():
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host = HOST, port = PORT)
+    uvicorn.run("main:app", host = HOST, port = 8000)
